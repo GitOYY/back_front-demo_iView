@@ -1,0 +1,34 @@
+//宽高
+.wh(@width, @height){
+  width: @width;
+  height: @height;
+}
+
+//div动画定位上下左右居中
+.ctp(@width, @height) {
+	position: absolute;
+	top: 50%;
+  left: 50%;
+  margin-top: -@height/2;
+  margin-left: -@width/2;
+}
+
+//div的上下左右居中
+.ctt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//背景图片
+.bg(@url) {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(@url);
+  background-repeat:no-repeat ;
+  background-size: cover;
+  background-position:center;
+}
