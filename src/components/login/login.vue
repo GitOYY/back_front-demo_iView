@@ -35,12 +35,14 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   data () {
     return {
       loginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: 'admin123456'
       },
       ruleInline: {
         username: [
@@ -57,11 +59,15 @@ export default {
     }
   },
   methods: {
+    ...mapMutations('login', ['setToken']),
+    ...mapMutations('user', ['setUserInfo']),
     login (name) {
       this.$refs[name].validate((valid) => {
         if (valid) {
           if (this.loginForm.username === 'admin' && this.loginForm.password === 'admin123456') {
             this.loginLoading = false
+            this.setToken('njihiuhgvhjfyccf')
+            this.setUserInfo(this.loginForm)
             this.$router.push('layout')
           } else {
             this.$Message.error('用户名或者密码错误！')
