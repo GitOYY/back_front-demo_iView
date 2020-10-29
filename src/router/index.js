@@ -5,6 +5,7 @@ import login from '@/components/login/login'
 import home from '@/components/home/home'
 import welcome from '@/components/welcome'
 import layout from '@/components/layout/layout'
+import setting from '@/components/setting'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
           path: '/home',
           component: home,
           meta: []
+        },
+        {
+          path: '/setting',
+          name: '/setting',
+          component: setting
         }
       ]
     }
